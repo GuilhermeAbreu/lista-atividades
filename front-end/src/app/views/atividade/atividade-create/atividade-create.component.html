@@ -1,0 +1,13 @@
+<mat-card>
+    <mat-card-title>Nova Atividade</mat-card-title>
+    <form>
+        <mat-form-field appearance="legacy">
+            <textarea matInput placeholder="Descrição" [(ngModel)]="atividade.descricao" name="descricao">Olá sou um exemplo de descrição</textarea>
+        </mat-form-field>
+        <p>
+            <button  mat-raised-button color="primary" (click)="alterarStatusDaAtividade()">{{textStatusButton}}</button>
+        </p>
+    </form>
+    <button mat-raised-button color="primary" (click)="createAtividade()" >salvar</button>
+    <button mat-raised-button color="accent" (click)="cancel()">cancelar</button>
+</mat-card>

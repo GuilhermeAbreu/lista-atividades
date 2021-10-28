@@ -1,0 +1,24 @@
+<mat-card>
+    <div>
+        <button mat-raised-button color='primary' (click)="navegateToAtividadeCreate()"><i class='material-icons'>add_circle_outline</i></button>
+        <button mat-raised-button color='primary' (click)="navegateToAtividadeCreate()"><i class='material-icons'>add_circle_outline</i>Apenas Concluidos</button>
+        <button mat-raised-button color='primary' (click)="navegateToAtividadeCreate()"><i class='material-icons'>add_circle_outline</i>Apenas Pendentes</button>
+    </div>
+</mat-card>
+<mat-card>
+    <mat-expansion-panel hideToggle *ngFor="let atividade of atividades; index as i">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+            <button mat-mini-fab color='danger' (click)='deleteAtividade(atividade.id)'><i class='material-icons'>delete</i></button>
+                <button mat-mini-fab color='primary' (click)="navegateToAtividadeCreate()"><i class='material-icons'>edit</i></button>
+                <button mat-mini-fab color='danger' *ngIf="atividade.concluido"><i class='material-icons'>done</i></button>
+                <button mat-mini-fab color='primary' *ngIf="!atividade.concluido"><i class='material-icons'>report_problem</i></button>
+                {{atividade.descricao.substring(0,20)}}
+            </mat-panel-title>
+            <mat-panel-description>
+                Criado em {{atividade.data_criacao | date: 'dd-MM-yyyy hh:mm'}}
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>{{atividade.descricao}}</p>
+    </mat-expansion-panel>
+</mat-card>
