@@ -34,12 +34,12 @@ export class AtividadeService {
     return this.http.delete<any>(this.baseURL+'/delete/'+id)
   }
 
-  editAtividade(atividade: AtividadeInterface) : Observable<AtividadeInterface>{
-    return this.http.put<AtividadeInterface>(this.baseURL+'/update', atividade)
+  updateAtividade(id : any , atividade: AtividadeInterface) : Observable<AtividadeInterface>{
+    return this.http.post<AtividadeInterface>(this.baseURL+'/update/'+id, atividade)
   }
 
-  readById(id: number | string) : Observable<AtividadeInterface>{
-    return this.http.get<AtividadeInterface>(this.baseURL+'/1')
+  readById(id: number | string,) : Observable<AtividadeInterface>{
+    return this.http.get<AtividadeInterface>(this.baseURL+'/'+id)
   }
 
 }

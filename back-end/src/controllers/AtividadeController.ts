@@ -48,6 +48,8 @@ class AtividadeController{
 
             const valuesAtividadeSchema = await AtividadeSchema.validationBodyUpdate(valueAtividadeBody)           
 
+            console.log(valueAtividadeBody)
+
             if(valuesAtividadeSchema.concluido) valuesAtividadeSchema.data_conclusao = new Date()
 
             const valuesAtividadeUpdate = await AtividadeModel.update(valuesAtividadeSchema, idAtividade)
@@ -75,6 +77,7 @@ class AtividadeController{
         try {
             const idAtividade = Number(req.params.id)
             const valuesAtividade = await AtividadeModel.findById(idAtividade)
+            console.log(idAtividade)
             return res.status(200).send(valuesAtividade)
         } catch (error : any) {
             return res.status(400).send({
