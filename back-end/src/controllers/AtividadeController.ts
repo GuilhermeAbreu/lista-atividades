@@ -71,6 +71,18 @@ class AtividadeController{
         }
     }
 
+    static async findById(req: Request, res: Response){
+        try {
+            const idAtividade = Number(req.params.id)
+            const valuesAtividade = await AtividadeModel.findById(idAtividade)
+            return res.status(200).send(valuesAtividade)
+        } catch (error : any) {
+            return res.status(400).send({
+                error: new Error(error).message
+            })
+        }
+    }
+
 }
 
 

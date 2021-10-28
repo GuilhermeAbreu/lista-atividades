@@ -11,5 +11,6 @@ Routers.post('/atividades/update/:id', AtividadeController.update)
 
 Routers.delete('/atividades/delete/:id', AtividadeController.delete)
 
+Routers.get('/atividades/:id', AtividadeController.findById) 
 
 export default Routers  

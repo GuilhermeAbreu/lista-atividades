@@ -7,7 +7,8 @@ import { HomeComponent } from './views/home/home.component';
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'atividades', component: AtividadeCrudComponent},
-  {path: 'atividades/create', component: AtividadeCreateComponent}
+  {path: 'atividades/create', component: AtividadeCreateComponent},
+  {path: 'atividades/update/:id', component: AtividadeCreateComponent}
 ];
 
 @NgModule({

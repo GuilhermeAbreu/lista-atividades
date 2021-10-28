@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AtividadeInterface } from 'src/app/components/atividade/atividade.model';
 import { AtividadeService } from 'src/app/components/atividade/atividade.service';
 
@@ -17,9 +17,17 @@ export class AtividadeUpdateComponent implements OnInit {
 
   textStatusButton = "Definir como concluido"
 
-  constructor(private atividadeService:  AtividadeService, private router: Router) { }
+  constructor(private atividadeService:  AtividadeService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+
+    const id = this.activatedRoute.snapshot.params['id']
+    if(id){
+        this.atividadeService.readById(id)
+      .subscribe(atividade => this.atividade = atividade)
+    }
+
+
   }
 
   alterarStatusDaAtividade(){

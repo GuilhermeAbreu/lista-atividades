@@ -49,6 +49,10 @@ class AtividadeModel{
         
     }
 
+    static async findById(id: number){
+        return await AtividadeEntity.findByPk(id);
+    }
+
 }
 
 export { AtividadeModel };

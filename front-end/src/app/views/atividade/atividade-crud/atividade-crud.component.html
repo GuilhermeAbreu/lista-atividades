@@ -10,7 +10,7 @@
         <mat-expansion-panel-header>
             <mat-panel-title>
             <button mat-mini-fab color='danger' (click)='deleteAtividade(atividade.id)'><i class='material-icons'>delete</i></button>
-                <button mat-mini-fab color='primary' (click)="navegateToAtividadeCreate()"><i class='material-icons'>edit</i></button>
+                <button mat-mini-fab color='primary' (click)="navegateToAtividadeUpdate(atividade.id)"><i class='material-icons'>edit</i></button>
                 <button mat-mini-fab color='danger' *ngIf="atividade.concluido"><i class='material-icons'>done</i></button>
                 <button mat-mini-fab color='primary' *ngIf="!atividade.concluido"><i class='material-icons'>report_problem</i></button>
                 {{atividade.descricao.substring(0,20)}}

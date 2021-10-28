@@ -38,4 +38,8 @@ export class AtividadeService {
     return this.http.put<AtividadeInterface>(this.baseURL+'/update', atividade)
   }
 
+  readById(id: number | string) : Observable<AtividadeInterface>{
+    return this.http.get<AtividadeInterface>(this.baseURL+'/1')
+  }
+
 }

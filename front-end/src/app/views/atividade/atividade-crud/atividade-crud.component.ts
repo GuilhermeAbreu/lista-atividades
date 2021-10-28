@@ -32,4 +32,11 @@ export class AtividadeCrudComponent implements OnInit {
     });
   }
 
+  navegateToAtividadeUpdate(id : number | string | undefined): void {
+
+    if(id === undefined) return this.atividadeService.showMessage('Selecione uma atividade para alterar')
+
+    this.router.navigate(['/atividades/update/'+id]);
+  }
+
 }
