@@ -10,6 +10,9 @@ para rodar o projeto
 
 Primeiro rode o comando **npm i -f**
 
+Por padrão o projeto e adaptado para o postgres o pacote do banco ja vem incluido, caso precise de outro banco de dados e preciso instalar seu pacotes.
+Para mais informações consulte https://sequelize.org/master/manual/getting-started.html
+
 Um banco de dados ja deve está criado, logo em seguida rode o comando **npx sequelize-cli db:migrate**
 
 Dessa forma o mesmo ira criar as tabelas do projeto para você.
